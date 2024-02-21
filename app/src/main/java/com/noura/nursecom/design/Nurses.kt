@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,6 +31,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.material3.Button as Button1
 
 
 data class Nurse(
@@ -72,7 +72,7 @@ fun NursesScreen() {
         {
             items(listOf("AM", "PM", "Full Time"))
             { period ->
-                Button(
+                Button1(
                     onClick = { /*Handle button click*/ },
 //                    { selectedPeriod = period }
                     modifier = Modifier
@@ -90,7 +90,7 @@ fun NursesScreen() {
         {
             items(listOf("Female", "Male"))
             { speciality ->
-                Button(
+                Button1(
                     onClick = { /*Handle button click*/ },
                     modifier = Modifier
                         .padding(end = 6.dp)
@@ -108,7 +108,7 @@ fun NursesScreen() {
         {
             items(listOf("Cardio", "ER", "ICU", "Surgery", "Oncology"))
             { speciality ->
-                Button(
+                Button1(
                     onClick = { /*Handle button click*/ },
                     Modifier.padding(end = 6.dp)
                 ) {
@@ -142,17 +142,21 @@ fun NurseCard(nurse: Nurse) {
             .padding(16.dp),
 
 
-
 //        verticalAlignment = Alignment.CenterVertically,
 
-        ) {
+    ) {
 
-        Column(modifier = Modifier.weight(1f)
-            .padding(8.dp))
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .padding(8.dp)
+        )
 
         {
-            Text(text = nurse.name,
-                style = TextStyle(fontWeight = FontWeight.Bold,
+            Text(
+                text = nurse.name,
+                style = TextStyle(
+                    fontWeight = FontWeight.Bold,
                     color = Color.Black
                 )
             )
@@ -168,10 +172,22 @@ fun NurseCard(nurse: Nurse) {
             alignment = Alignment.TopCenter,
             contentScale = ContentScale.Crop
         )
-
-
     }
+
+    Button1(
+
+        onClick = { /*Handle Booking action*/ },
+        modifier = Modifier
+            .padding(8.dp)
+            .height(35.dp)
+    )
+
+    {
+        Text("Book Now")
+    }
+
 }
+
 
 @Composable
 fun Rating(rating: Int) {

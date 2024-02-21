@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -43,7 +44,7 @@ fun ProfilePage(userProfile: UserProfile) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .background(color = Color.LightGray),
+            .background(color = Color.White),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -68,6 +69,8 @@ fun ProfilePicture(profilePicture: Int) {
             .border(4.dp, Color.Gray, CircleShape),
         contentScale = ContentScale.Crop
     )
+
+
 }
 
 @Composable
@@ -76,7 +79,7 @@ fun UserInfoItem(label: String, value: String) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 2.dp)
-            .border(2.dp, Color.LightGray, RoundedCornerShape(8.dp))
+            .border(2.dp, Color.White, RoundedCornerShape(8.dp))
         ,
         verticalAlignment = Alignment.CenterVertically
 
@@ -84,16 +87,20 @@ fun UserInfoItem(label: String, value: String) {
         Text(
             text = "$label: ",
             fontWeight = FontWeight.Bold,
+            style = MaterialTheme.typography.headlineMedium,
             fontSize = 18.sp,
-            color = Color.Black ,
+            color = Color.DarkGray ,
             modifier = Modifier
                 .padding(2.dp)
-                .width(100.dp)
+                .width(140.dp)
+
         )
         Text(
             text = value,
             fontSize = 16.sp,
-            color = Color.Blue
+            fontWeight = FontWeight.Bold,
+            color = Color.DarkGray,
+            style = MaterialTheme.typography.headlineMedium,
 
         )
     }
