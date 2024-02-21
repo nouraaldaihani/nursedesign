@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:text="Nurses Working Hours"
+        android:textColor="@android:color/black"
+        android:padding="8dp"
+        android:textSize="35sp"
+        />
+
+    <Button
+    android:id="@+id/am_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="AM"
+    android:textSize="24sp"
+    android:textColor="@android:color/white"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/rounded_button"
+    android:elevation="8dp"
+    android:layout_gravity="center"
+    />
+
+<Button
+    android:id="@+id/pm_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="PM"
+    android:textSize="24sp"
+    android:textColor="@android:color/white"
+    android:background="@drawable/rounded_button"
+    android:layout_below="@id/am_button"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center"
+    />
+
+<Button
+    android:id="@+id/full_time_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Full Time"
+    android:textSize="24sp"
+    android:textColor="@android:color/white"
+    android:background="@drawable/rounded_button"
+    android:layout_below="@id/pm_button"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center"
+    />
+
+</LinearLayout>
