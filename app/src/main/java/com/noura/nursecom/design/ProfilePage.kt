@@ -72,14 +72,14 @@ fun ProfilePicture(profilePicture: Int) {
 
 @Composable
 fun UserInfoItem(label: String, value: String) {
-    Column(
+    Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 2.dp)
             .border(2.dp, Color.LightGray, RoundedCornerShape(8.dp))
         ,
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalAlignment = Alignment.CenterVertically
+
     ) {
         Text(
             text = "$label: ",
