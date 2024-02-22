@@ -29,11 +29,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.noura.nursecom.R
+import java.net.Inet4Address
 
 data class UserProfile(
     val username: String,
-    val age: Int,
+    val age: String,
     val civilId: String,
+    val address: String,
     val medicalRecord: String,
     val profilePicture: Int
 )
@@ -54,6 +56,7 @@ fun ProfilePage(userProfile: UserProfile) {
         UserInfoItem(label = "Age", value = userProfile.age.toString())
         UserInfoItem(label = "Civil ID", value = userProfile.civilId)
         UserInfoItem(label = "Medical Record", value = userProfile.medicalRecord)
+        UserInfoItem(label = "Address", value = userProfile.address )
     }
 }
 
@@ -110,9 +113,10 @@ fun UserInfoItem(label: String, value: String) {
 @Composable
 fun UserProfileScreen(function: () -> Unit) {
     val userProfile = UserProfile(
-        username = "Noura Aldaihani",
-        age = 24,
+        username = "Haya",
+        age = "24",
         civilId = "123456789",
+        address = "Alzahra, block 4, house 6",
         medicalRecord = "Iron IV Drip",
         profilePicture = R.drawable.profile_picture
     )

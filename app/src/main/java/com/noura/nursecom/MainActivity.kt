@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.noura.nursecom.design.NursesScreen
+import com.noura.nursecom.design.ProfilePage
+import com.noura.nursecom.design.UserProfileScreen
 
 import com.noura.nursecom.ui.theme.NursecomTheme
 
@@ -25,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     NursesScreen()
-                }
+                    PreviewUserProfileScreen()
 
 
             }
@@ -39,6 +41,14 @@ fun GreetingPreview() {
     NursecomTheme {
 
     }
+}
+    @Preview
+    @Composable
+    fun PreviewUserProfileScreen() {
+        UserProfileScreen {
+        }
+    }
+
 }
 
 
